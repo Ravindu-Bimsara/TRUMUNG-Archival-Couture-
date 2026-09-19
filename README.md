@@ -37,13 +37,3 @@ An avant-garde, luxury e-commerce and editorial lookbook experience inspired by 
   * Bespoke VIP Fitting Concierge booking interface.
 
 ---
-
-## File Structure
-
-```text
-trumung-luxury-atelier/
-│
-├── index.html       # Semantic HTML5 architecture & editorial layouts
-├── style.css        # Luxury dark palette, custom fonts, animations & responsive queries
-├── script.js        # Catalog dataset (32 pieces), filtering, pagination, cart & currency logic
-└── README.md        # Project documentation
