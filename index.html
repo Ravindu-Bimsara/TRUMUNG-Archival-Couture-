@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRÜMUNG Fasion</title>
+  
+  <!-- Google Fonts: Luxury Editorial Serifs & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar">
+    <div class="announcement-track">
+      <span>PARIS ARCHIVE SALE — COMPLIMENTARY COURIER DELIVERY ON ALL GLOBAL ARCHIVAL ORDERS</span>
+      <span class="live-clocks">PARIS: <span id="paris-time">--:--</span> | NYC: <span id="nyc-time">--:--</span> | LA: <span id="la-time">--:--</span></span>
+    </div>
+  </aside>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="#shop" class="nav-link">Collection</a>
+        <a href="#runway" class="nav-link">Runway</a>
+        <a href="#atelier" class="nav-link">Atelier</a>
+        <a href="#concierge" class="nav-link">Concierge</a>
+        <a href="#press" class="nav-link">Gazette</a>
+      </nav>
+
+      <div class="brand-monogram">
+        <a href="#">TRÜMUNG</a>
+      </div>
+
+      <div class="nav-right">
+        <select id="currency-selector" class="currency-select" aria-label="Currency Selector">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+        
+        <button id="cart-btn" class="icon-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-count" class="badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Split Screen Hero Monolith -->
+  <section class="hero-split">
+    <div class="monolith nyc-monolith">
+      <div class="monolith-bg" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop');"></div>
+      <div class="monolith-overlay"></div>
+      <div class="monolith-content">
+        <span class="location-tag">40.7264° N, 73.9818° W</span>
+        <h2 class="city-name">East Village</h2>
+        <h3 class="region-name">New York</h3>
+        <p class="monolith-desc">Structural raw denim, heavy wools, and architectural street drape.</p>
+        <a href="#shop" class="outline-btn">Explore NYC Studio</a>
+      </div>
+    </div>
+
+    <div class="monolith la-monolith">
+      <div class="monolith-bg" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop');"></div>
+      <div class="monolith-overlay"></div>
+      <div class="monolith-content">
+        <span class="location-tag">34.0618° N, 118.3007° W</span>
+        <h2 class="city-name">Koreatown</h2>
+        <h3 class="region-name">Los Angeles</h3>
+        <p class="monolith-desc">Solarized dyeing techniques, relaxed silhouettes, and calfskin leather.</p>
+        <a href="#shop" class="outline-btn">Explore LA Studio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section XVI: 32-Item Archival Collection with Load More -->
+  <section class="collection-section" id="shop">
+    <div class="section-watermark">ARCHIVE</div>
+    
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">XVI</span>
+        <div>
+          <h2 class="sec-title">LIMITED EDITION ARCHIVES</h2>
+          <span class="sec-subtitle">HAND-CRAFTED ATELIER CAPSULES</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-category="all">All Archival (<span id="count-all">32</span>)</button>
+        <button class="filter-btn" data-category="outerwear">Outerwear (<span id="count-outerwear">11</span>)</button>
+        <button class="filter-btn" data-category="tailoring">Tailoring (<span id="count-tailoring">11</span>)</button>
+        <button class="filter-btn" data-category="accessories">Accessories (<span id="count-accessories">10</span>)</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Product Cards Grid -->
+    <div class="products-grid" id="products-container"></div>
+
+    <!-- Load More Action Container -->
+    <div class="load-more-container" id="load-more-wrapper">
+      <div class="progress-indicator">
+        <span id="load-progress-text">Showing 8 of 32 items</span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+      <button id="load-more-btn" class="solid-btn load-more-btn">
+        <span>LOAD MORE ARCHIVES</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- NEW EXTRA SECTION: Cinematic Runway Atmosphere -->
+  <section class="runway-section" id="runway">
+    <div class="runway-bg" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1800&auto=format&fit=crop');"></div>
+    <div class="runway-overlay"></div>
+    <div class="runway-content">
+      <span class="collab-tag">RUNWAY PERSPECTIVE // 2026 EDITION</span>
+      <h2 class="runway-title">FASHION FADES, STYLE IS ETERNAL</h2>
+      <p class="runway-quote">"To wear Trümung is to exist outside the cycle of seasonal disposable trends. Every garment is an architectural monument to silent confidence."</p>
+      <div class="runway-meta">
+        <span>PARIS DECONSTRUCTION WEEK</span>
+        <span class="divider-line"></span>
+        <span>PALADIN HALL 04</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Collection Statement Section -->
+  <section class="curated-banner">
+    <div class="curated-card">
+      <div class="curated-meta">
+        <span>NEW ARRIVALS</span>
+        <span class="divider-line"></span>
+        <span>CURATED BY</span>
+      </div>
+      <h2 class="signature-title">Martin Schleifer</h2>
+      <p class="curated-desc">
+        A deliberate examination of structure, raw organic fiber drape, and artisanal leather carving. Garments tailored in limited batches of twenty-four worldwide.
+      </p>
+      <a href="#shop" class="outline-btn">EXPLORE CURATED PIECES</a>
+    </div>
+  </section>
+
+  <!-- Section XVIII: Atelier & Craftsmanship -->
+  <section class="atelier-section" id="atelier">
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">XVIII</span>
+        <div>
+          <h2 class="sec-title">ATELIER CRAFTSMANSHIP</h2>
+          <span class="sec-subtitle">PARIS — LE MARAIS WORKSHOP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="atelier-grid">
+      <div class="atelier-text-block">
+        <div class="crafted-badge">
+          <span>HERITAGE SOURCING</span>
+          <span class="divider-line"></span>
+          <span>PARIS & OKAYAMA</span>
+        </div>
+        <h3 class="cursive-subhead">Pure Devotion to Form</h3>
+        <p>
+          Every silhouette originates with hand-drawn structural sketches in Paris before being cut from bolts of Japanese natural indigo selvedge and deadstock Italian virgin cashmere.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <h4>24</h4>
+            <p>Numbered Units Per Run</p>
+          </div>
+          <div class="stat-item">
+            <h4>72h</h4>
+            <p>Manual Stitching Time</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Traceable Origins</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="atelier-visual">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200&auto=format&fit=crop" alt="Haute couture tailoring workshop" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW EXTRA SECTION: Editorial Press & Critics -->
+  <section class="press-section" id="press">
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">XIX</span>
+        <div>
+          <h2 class="sec-title">CRITICAL ACCLAIM</h2>
+          <span class="sec-subtitle">WHAT THE EDITORS ARE SAYING</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="press-grid">
+      <div class="press-card">
+        <span class="press-source">THE NEW YORK TIMES STYLE</span>
+        <p class="press-body">"Trümung strips away fashion vanity, leaving pure architectural silhouette. Easily one of the most compelling quiet-luxury ateliers."</p>
+        <span class="press-author">— Elena Vance, Senior Critic</span>
+      </div>
+      <div class="press-card">
+        <span class="press-source">VOGUE ARCHIVE</span>
+        <p class="press-body">"A masterclass in proportions. Martin Schleifer treats virgin wool and Japanese denim like sculptors treat marble."</p>
+        <span class="press-author">— Milan Review Autumn 2026</span>
+      </div>
+      <div class="press-card">
+        <span class="press-source">HIGHSNOBIETY CULTURE</span>
+        <p class="press-body">"For those who prize rarity over logos. Trümung's limited drops sell out not on hype, but on irreplaceable fabric caliber."</p>
+        <span class="press-author">— Architectural Dossier</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW EXTRA SECTION: Bespoke VIP Concierge -->
+  <section class="concierge-section" id="concierge">
+    <div class="concierge-container">
+      <div class="concierge-details">
+        <span class="collab-tag">PRIVATE APPOINTMENTS</span>
+        <h2 class="concierge-heading">PRIVATE BESPOKE FITTING</h2>
+        <p class="concierge-desc">
+          Schedule a private 90-minute consultation with our master tailor at our Manhattan, Koreatown, or Paris showrooms. Champagne service and custom cloth swatches provided.
+        </p>
+        <div class="concierge-info">
+          <div><i class="fa-solid fa-location-dot"></i> SoHo NYC | Koreatown LA | Le Marais Paris</div>
+          <div><i class="fa-solid fa-envelope"></i> atelier@trumung.com</div>
+        </div>
+      </div>
+
+      <form id="concierge-form" class="concierge-form">
+        <div class="form-row">
+          <input type="text" id="vip-name" placeholder="FULL NAME" required />
+          <input type="email" id="vip-email" placeholder="EMAIL ADDRESS" required />
+        </div>
+        <div class="form-row">
+          <select id="vip-location" required>
+            <option value="" disabled selected>SELECT SHOWROOM</option>
+            <option value="New York (SoHo)">New York (SoHo)</option>
+            <option value="Los Angeles (Koreatown)">Los Angeles (Koreatown)</option>
+            <option value="Paris (Le Marais)">Paris (Le Marais)</option>
+          </select>
+          <input type="date" id="vip-date" required />
+        </div>
+        <textarea id="vip-notes" rows="3" placeholder="SPECIFIC ARCHIVAL PIECE OR REQUIREMENTS"></textarea>
+        <button type="submit" class="solid-btn full-btn">CONFIRM APPOINTMENT REQUEST</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Luxury Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">TRÜMUNG</h2>
+        <p>Bespoke tailoring, numbered archival drops, and experimental luxury couture.</p>
+        <span class="contact-email">concierge@trumung.com</span>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title">Showrooms</h4>
+        <ul>
+          <li>42 Crosby St, SoHo, New York</li>
+          <li>3720 Wilshire Blvd, Los Angeles</li>
+          <li>14 Rue de Charonne, Paris</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title">Client Concierge</h4>
+        <ul>
+          <li><a href="#concierge">Bespoke Fitting</a></li>
+          <li><a href="#">White Glove Shipping</a></li>
+          <li><a href="#">Provenance Verification</a></li>
+          <li><a href="#">Archival Garment Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="col-title">Privé Newsletter</h4>
+        <p>Private encrypted invitations to upcoming capsule unveilings.</p>
+        <form id="newsletter-form" class="subscribe-box">
+          <input type="email" id="newsletter-email" placeholder="YOUR EMAIL ADDRESS" required />
+          <button type="submit" class="subscribe-btn">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TRÜMUNG ATELIER. ALL RIGHTS RESERVED.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Protocol</a>
+        <a href="#">Terms of Heritage</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Bag Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>SHOPPING BAG (<span id="cart-items-count">0</span>)</h3>
+      <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="drawer-body" id="cart-items-list">
+      <div class="empty-cart-msg">Your shopping bag is currently empty.</div>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">PROCEED TO SECURE CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- JavaScript Logic -->
+  <script src="./Script/script.js"></script>
+</body>
+</html>
